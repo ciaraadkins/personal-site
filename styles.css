@@ -1,4 +1,67 @@
-/* Title links in project list */
+/* Header Quick Links */
+.header-quick-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.quick-link {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.25rem 0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.quick-link::after {
+    content: '↗';
+    margin-left: 0.4rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.quick-link:hover {
+    color: white;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.quick-link:hover::after {
+    opacity: 1;
+    transform: translateX(2px) translateY(-2px);
+}
+
+.quick-link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.quick-link:hover::before {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .header-quick-links {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .quick-link {
+        font-size: 0.9rem;
+    }
+}/* Title links in project list */
 .title-link {
     color: #444;
     text-decoration: none;
@@ -336,12 +399,12 @@
     margin-top: 0;
 }/* Clickable identity tag */
 .identity-tag-link {
-    background-color: var(--background-color);
-    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.2s ease;
     text-decoration: none;
     display: inline-flex;
@@ -349,9 +412,10 @@
 }
 
 .identity-tag-link:hover {
-    background-color: var(--primary-color);
-    color: var(--background-color);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
     text-decoration: none;
+    border-color: white;
 }
 
 .identity-tag-link:after {
@@ -719,17 +783,72 @@
 
 .carousel-dot.active {
     background-color: var(--primary-color);
-}/* Font declarations */
+}/* Eudoxus Sans Font Family */
+/* Regular */
 @font-face {
-    font-family: 'YourCustomFont';
-    src: url('fonts/your-font-name.woff2') format('woff2'),
-         url('fonts/your-font-name.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Eudoxus Sans';
+    src: url('fonts/eudoxus-sans/EudoxusSans-Regular.woff2') format('woff2'),
+         url('fonts/eudoxus-sans/EudoxusSans-Regular.woff') format('woff'),
+         url('fonts/eudoxus-sans/EudoxusSans-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
-/* You can add more @font-face declarations for additional fonts */
+/* Light */
+@font-face {
+    font-family: 'Eudoxus Sans';
+    src: url('fonts/eudoxus-sans/EudoxusSans-Light.woff2') format('woff2'),
+         url('fonts/eudoxus-sans/EudoxusSans-Light.woff') format('woff'),
+         url('fonts/eudoxus-sans/EudoxusSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Eudoxus Sans';
+    src: url('fonts/eudoxus-sans/EudoxusSans-Medium.woff2') format('woff2'),
+         url('fonts/eudoxus-sans/EudoxusSans-Medium.woff') format('woff'),
+         url('fonts/eudoxus-sans/EudoxusSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Eudoxus Sans';
+    src: url('fonts/eudoxus-sans/EudoxusSans-Bold.woff2') format('woff2'),
+         url('fonts/eudoxus-sans/EudoxusSans-Bold.woff') format('woff'),
+         url('fonts/eudoxus-sans/EudoxusSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: 'Eudoxus Sans';
+    src: url('fonts/eudoxus-sans/EudoxusSans-ExtraBold.woff2') format('woff2'),
+         url('fonts/eudoxus-sans/EudoxusSans-ExtraBold.woff') format('woff'),
+         url('fonts/eudoxus-sans/EudoxusSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extra Light */
+@font-face {
+    font-family: 'Eudoxus Sans';
+    src: url('fonts/eudoxus-sans/EudoxusSans-ExtraLight.woff2') format('woff2'),
+         url('fonts/eudoxus-sans/EudoxusSans-ExtraLight.woff') format('woff'),
+         url('fonts/eudoxus-sans/EudoxusSans-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* Base styles */
 :root {
@@ -750,7 +869,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Eudoxus Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--background-color);
@@ -867,6 +986,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: white;
 }
 
 h2 {
@@ -903,9 +1023,10 @@ ul, ol {
 /* Header */
 header {
     padding: 5rem 0 3rem;
-    background-color: var(--light-gray);
+    background-color: #0c1e2b; /* Dark blue background */
     margin-bottom: 2rem;
     text-align: center;
+    color: white;
 }
 
 /* Remove header branding styles as we've moved the logo */
@@ -919,21 +1040,22 @@ header {
 }
 
 .identity-tag {
-    background-color: var(--background-color);
-    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* This style is defined above - keeping for compatibility */
 .identity-tag-link {
-    background-color: var(--background-color);
-    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.2s ease;
     text-decoration: none;
     display: inline-flex;
@@ -1285,6 +1407,32 @@ footer {
     width: 100%;
     position: relative;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+.ai-acknowledgment {
+    font-size: 0.85rem;
+    color: var(--quote-color);
+    opacity: 0.8;
 }
 
 /* Responsive */
@@ -1356,5 +1504,10 @@ footer {
     
     .timeline-marker {
         left: -1.75rem;
+    }
+    
+    footer .container {
+        width: 90%;
+        padding: 0 0.5rem;
     }
 }
