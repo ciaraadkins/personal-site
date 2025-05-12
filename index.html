@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciara Adkins | Expert Generalist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for radar chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Quick fix to ensure footer stays at the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .layout-container {
+            flex: 1;
+            display: flex;
+        }
+        footer {
+            width: 100%;
+            margin-left: var(--sidebar-width);
+        }
+        @media (max-width: 992px) {
+            footer {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-container">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="quick-nav">
+                    <ul class="nav-links">
+                        <li><a href="#about"><span>👋</span>About</a></li>
+                        <li><a href="#personality"><span>🧠</span>Personality</a></li>
+                        <li><a href="#meme-carousel"><span>😂</span>Me, Explained</a></li>
+                        <li><a href="#superpower"><span>💫</span>Work Superpowers</a></li>
+                        <li><a href="#generalist"><span>✍️</span>Expert Generalist</a></li>
+                        <li><a href="#ai-native"><span>🤖</span>AI-Native</a></li>
+                        <li><a href="#projects"><span>🚀</span>Projects</a></li>
+                        <li><a href="#fun-facts"><span>🎭</span>Fun Facts</a></li>
+                        <li><a href="#skills"><span>💼</span>Technical Skills</a></li>
+                        <li><a href="#contact"><span>📬</span>Connect</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header>
+                <div class="container">
+                    <h1>Ciara Adkins</h1>
+                    <div class="identity-tags">
+                        <span class="identity-tag">AI-Native</span>
+                        <span class="identity-tag">Expert Generalist</span>
+                        <span class="identity-tag">Lifelong Learner</span>
+                        <span class="identity-tag">Emerging Leader</span>
+                        <span class="identity-tag">Innovative Technologist</span>
+                        <span class="identity-tag">Aspiring Polyglot</span>
+                        <a href="https://www.16personalities.com/isfp-personality" target="_blank" class="identity-tag-link">ISFP</a>
+                        <a href="https://www.truity.com/blog/enneagram-type/type-three" class="identity-tag-link">Enneagram Type 3</a>
+                    </div>
+                </div>
+            </header>
+        <section id="about" class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>Hi, I'm Ciara Adkins — an AI-Native Expert Generalist who thrives at the intersection of technology, strategy, and storytelling.</p>
+                
+                <p>As the second team member and classic start-up COO at <a href="https://moonbird.ai" target="_blank">moonbird AI</a>, I'm the tactical jack-of-all-trades keeping the engine running and the vision moving forward. My key roles include:</p>
+                <ul>
+                    <li><strong>🧠 Principal Solutions Architect:</strong> Translating client needs into tactical, user-centered solutions. I coordinate with dev teams, enhance user experience, and ensure our solutions deliver both function and delight.</li>
+                    <li><strong>👩🏽‍💻 Head of Marketing:</strong> Leading all things marketing: managing and writing website content, creating LinkedIn campaigns, implementing SEO, writing blogs, case studies and white papers, crafting copy, and designing brand assets that reflect our evolving voice.</li>
+                    <li><strong>✨ MCP Server Developer:</strong> Designing and building Model Context Protocol (MCP) servers that integrate third-party data and automation into AI workflows. I've shipped servers for Amplitude, Mixpanel, Puppeteer+ Martech, and eBird (for our CEO, a passionate birder).</li>
+                </ul>
+                
+                <p>I've worked across analytics, product, and marketing roles at companies like WillowTree and The Home Depot, where I was known for simplifying complex problems, mentoring with empathy, and building bridges across disciplines.</p>
+            </div>
+        </section>
+
+        <section id="personality" class="container">
+            <h2>Personality Insights</h2>
+            <p class="section-subtitle">My patterns, preferences, and how I work best</p>
+            
+            <div class="personality-nav">
+                <button class="personality-nav-button active" data-target="enneagram">Enneagram</button>
+                <button class="personality-nav-button" data-target="bigfive">Big Five</button>
+                <button class="personality-nav-button" data-target="personal">Personal Notes</button>
+            </div>
+            
+            <div class="personality-content">
+                <!-- Enneagram Panel -->
+                <div class="personality-panel active" id="enneagram-panel">
+                    <div class="personality-header">
+                        <h3>Type 3 with 2 & 4 Wings</h3>
+                        <p>I'm ambitious, adaptable, and driven by meaningful achievement</p>
+                    </div>
+                    
+                    <div class="personality-traits">
+                        <div class="trait-column">
+                            <h4>My Strengths</h4>
+                            <ul>
+                                <li>I have great go-forward zeal for work and meaningful accomplishment</li>
+                                <li>I know how to connect with people and navigate social dynamics</li>
+                                <li>I'm efficient, productive, and driven to deliver results</li>
+                                <li>I'm a risk-taker with a talent for innovative solutions</li>
+                                <li>I adapt quickly and improvise well when plans change</li>
+                            </ul>
+                        </div>
+                        <div class="trait-column">
+                            <h4>My Growth Areas</h4>
+                            <ul>
+                                <li>I can focus too heavily on my image and perception</li>
+                                <li>I might sometimes come across as competitive</li>
+                                <li>I can be hard on myself when I don't meet my standards</li>
+                                <li>I occasionally repress emotions to maintain performance</li>
+                                <li>I might let things sit and process before responding</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="wings-container">
+                        <div class="wing-item">
+                            <h4>Wing 2 Influence: 83%</h4>
+                            <p>My Two wing brings authentic confidence, empathy, and a nurturing spirit to my achievement drive. I genuinely want to help others succeed.</p>
+                        </div>
+                        <div class="wing-item">
+                            <h4>Wing 4 Influence: 66%</h4>
+                            <p>My Four wing adds a contemplative, self-questioning side with moral integrity and emotional depth. I'm driven to create meaningful work that reflects my values.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- <blockquote class="featured-quote">
+                        "I am loved and I am worthy, even when I fail."
+                        <cite>— My growth mantra</cite>
+                    </blockquote> -->
+                </div>
+                
+                <!-- Big Five Panel -->
+                <div class="personality-panel" id="bigfive-panel">
+                    <div class="bigfive-grid">
+                        <div class="bigfive-trait">
+                            <h4>Openness <span class="trait-score">98%</span></h4>
+                            <div class="trait-bar-container">
+                                <div class="trait-bar" style="width: 98%"></div>
+                                <div class="trait-avg" style="left: 58%"></div>
+                            </div>
+                            <p>I'm highly creative, imaginative, and intellectually curious. I appreciate aesthetic experiences and sensory beauty, often seeing connections others miss. I have strong creative sensibilities while maintaining a preference for practical applications over purely theoretical concepts.</p>
+                        </div>
+                        
+                        <div class="bigfive-trait">
+                            <h4>Conscientiousness <span class="trait-score">77%</span></h4>
+                            <div class="trait-bar-container">
+                                <div class="trait-bar" style="width: 77%"></div>
+                                <div class="trait-avg" style="left: 55%"></div>
+                            </div>
+                            <p>I'm organized and goal-oriented, preferring spontaneity over rigid planning. I tend to be flexible and adaptable rather than rigidly organized, but I'm capable of intense focus when personally engaged with tasks that align with my values.</p>
+                        </div>
+                        
+                        <div class="bigfive-trait">
+                            <h4>Extraversion <span class="trait-score">33%</span></h4>
+                            <div class="trait-bar-container">
+                                <div class="trait-bar" style="width: 33%"></div>
+                                <div class="trait-avg" style="left: 51%"></div>
+                            </div>
+                            <p>As an introvert, I feel energized by solitary activities and quiet reflection. I'm reserved in social settings but capable of warmth and engagement in small, comfortable groups or one-on-one interactions. I thrive in quiet environments and need time to recharge after social activities.</p>
+                        </div>
+                        
+                        <div class="bigfive-trait">
+                            <h4>Agreeableness <span class="trait-score">73%</span></h4>
+                            <div class="trait-bar-container">
+                                <div class="trait-bar" style="width: 73%"></div>
+                                <div class="trait-avg" style="left: 63%"></div>
+                            </div>
+                            <p>I'm deeply considerate of others' feelings and needs, with a strong desire to maintain harmony. I tend to be accepting, non-judgmental, and supportive, often avoiding confrontation. I naturally prioritize harmony in groups and value creating positive relationships.</p>
+                        </div>
+                        
+                        <div class="bigfive-trait">
+                            <h4>Neuroticism <span class="trait-score">56%</span></h4>
+                            <div class="trait-bar-container">
+                                <div class="trait-bar" style="width: 56%"></div>
+                                <div class="trait-avg" style="left: 54%"></div>
+                            </div>
+                            <p>I have balanced emotional responses, though I may be sensitive to criticism or conflict. I can experience strong internal emotions while maintaining a calm exterior. I've developed good coping mechanisms for handling stress, particularly related to work responsibilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-patterns">
+                        <h4>Key Patterns</h4>
+                        <div class="pattern-container">
+                            <div class="pattern-item">
+                                <h5>Core Pattern: <span>ISFP + Enneagram 9w4</span></h5>
+                                <p>I naturally seek harmony while maintaining my unique identity. My combination of traits makes me adaptable with many facets, making it easy for me to relate to diverse perspectives. I notice details others miss and tend to be an observant problem-solver.</p>
+                            </div>
+                            <div class="pattern-item">
+                                <h5>Work Style: <span>Creative Harmonizer</span></h5>
+                                <p>I combine innovative ideas with a quiet, supportive approach. I thrive when I feel what I'm doing matters—I need a compelling "why" that aligns with my values and principles. I prefer flexibility to respond to situations as they arise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Notes Panel -->
+                <div class="personality-panel" id="personal-panel">
+                    <div class="personality-header">
+                        <h3>How I Work Best</h3>
+                        <p>Personal insights to help us collaborate effectively</p>
+                    </div>
+                    
+                    <div class="personal-notes">
+                        <div class="note-card">
+                            <h4>Creative Process</h4>
+                            <p>I'm motivated by the art of innovation. Like when writing songs, my process often starts as a simple idea or melody, layering elements until creating something I never imagined possible before. I love the journey of transforming initial concepts into something remarkable.</p>
+                        </div>
+                        
+                        <div class="note-card">
+                            <h4>Processing Style</h4>
+                            <p>I need time to process information—my brain requires warm-up time. Being put on the spot or context switching during client meetings can be challenging for me. I offer my best insights when I've had time to think things through, and I might let things "cook" before responding.</p>
+                        </div>
+                        
+                        <div class="note-card">
+                            <h4>Work Environment</h4>
+                            <p>I can get bored easily and value having focus time without interruptions. This is especially important when I'm deeply engaged in a task. I might not always be assertive about my own needs, sometimes prioritizing team harmony over my preferences. I tend to avoid conflict when possible.</p>
+                        </div>
+                        
+                        <div class="note-card">
+                            <h4>Meaning & Purpose</h4>
+                            <p>I need to feel that what I'm doing matters. Having a clear purpose and caring deeply about the "why" behind my work is essential for my motivation and engagement. When I believe in the mission, my creativity and productivity flourish. I make decisions based on my deeply-held values.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="personal-notes">
+                        <div class="note-card">
+                            <h4>Team Collaboration</h4>
+                            <p>I contribute best by listening attentively, offering supportive feedback, and bringing a values-oriented perspective that keeps projects aligned with human needs. I appreciate environments where quiet voices are valued as much as assertive ones.</p>
+                        </div>
+                        
+                        <div class="note-card">
+                            <h4>Communication Style</h4>
+                            <p>My communication tends to be gentle and supportive, often expressing more through actions than words. I'm working on expressing my thoughts honestly while maintaining respect for others' perspectives, especially in group settings.</p>
+                        </div>
+                        
+                        <div class="note-card">
+                            <h4>Decision-Making</h4>
+                            <p>I make decisions based primarily on personal values rather than abstract logic, considering how choices affect people. I prefer having simple, flexible frameworks for decision-making that align with my values.</p>
+                        </div>
+                        
+                        <div class="note-card">
+                            <h4>Areas of Growth</h4>
+                            <p>I'm focused on improving my future planning skills, self-advocacy, and developing greater comfort with healthy conflict. I'm working on expressing my opinions in group settings, especially when they differ from the majority view.</p>
+                        </div>
+                    </div>
+                    
+                    <blockquote class="featured-quote">
+                        "When a flower doesn't bloom, you fix the environment, not the flower."
+                        <cite>— One of my core beliefs</cite>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <p class="personality-footer">
+                Based on <a href="https://www.truity.com/test/enneagram-personality-test" target="_blank" class="personality-link">Enneagram</a>, <a href="https://www.truity.com/test/big-five-personality-test" target="_blank" class="personality-link">Big Five</a>, and <a href="https://www.16personalities.com/isfp-personality" target="_blank" class="personality-link">ISFP</a> personality assessments, plus personal reflection.
+            </p>
+        </section>
+
+        <section id="meme-carousel" class="container">
+            <h2>Me, Explained</h2>
+            <p class="section-subtitle">A carousel of memes and GIFs that describe my personality</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Previous slide">&lsaquo;</button>
+                <button class="carousel-button next" aria-label="Next slide">&rsaquo;</button>
+                
+                <div class="carousel-track">
+                    <!-- Actual meme images from your folder -->
+                    <div class="carousel-item">
+                        <div class="media-wrapper image">
+                            <img src="images/memes/File.jpg" alt="Meme describing me" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="media-wrapper image">
+                            <img src="images/memes/IMG_1263.jpg" alt="Meme describing me" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="media-wrapper image">
+                            <img src="images/memes/IMG_5952.jpg" alt="Meme describing me" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="media-wrapper image">
+                            <img src="images/memes/IMG_7527.JPG" alt="Meme describing me" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="media-wrapper image">
+                            <img src="images/memes/image.png" alt="Meme describing me" class="carousel-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <div class="carousel-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="superpower" class="container">
+            <h2>Work Superpowers</h2>
+            <p class="section-subtitle">Feedback from current and past colleagues</p>
+            <div class="superpower-grid">
+                <div class="superpower-card">
+                    <h3>Simplifying Complexity</h3>
+                    <blockquote>
+                        "Your contributions and ownership of the work were invaluable, particularly in the area of code generation and refinement. You were able to explain to the team how the tool would work and integrate research workflows into Python code. You simplify complex problems with such clarity."
+                    </blockquote>
+                </div>
+                
+                <div class="superpower-card">
+                    <h3>Innovation & Creativity</h3>
+                    <blockquote>
+                        "Ciara constantly has amazing ideas and can execute on them quickly and impressively. They think outside the box to blow our minds and set the bar high."
+                    </blockquote>
+                </div>
+                
+                <div class="superpower-card">
+                    <h3>Communication & Teaching</h3>
+                    <blockquote>
+                        "Your world-class communication skills shine through in how you engage teams and clients, making complex topics accessible. You're not just solving problems, you're teaching others how to think through them."
+                    </blockquote>
+                </div>
+                
+                <div class="superpower-card">
+                    <h3>Collaboration & Inclusion</h3>
+                    <blockquote>
+                        "Your inclusive mindset and collaborative approach were evident throughout our BenchPress project. You welcomed ideas, pushed back when needed, and created a truly inclusive space for the team."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commented out Core Competencies section as this info can be found on LinkedIn
+        <section id="competencies" class="container">
+            <h2>Core Competencies</h2>
+            <p class="section-subtitle">Areas where I bring expertise and experience</p>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <h3>Technical Strategy & AI Workflow Design</h3>
+                    <p>MCP Servers, Data Integrations, Prompt Engineering</p>
+                </div>
+                
+                <div class="competency-item">
+                    <h3>Analytics & Insights</h3>
+                    <p>Python, SQL, Data Storytelling</p>
+                </div>
+                
+                <div class="competency-item">
+                    <h3>Marketing & Content Leadership</h3>
+                    <p>SEO, Copywriting, Campaign Strategy</p>
+                </div>
+                
+                <div class="competency-item">
+                    <h3>Cross-Functional Team Enablement</h3>
+                    <p>Mentorship, Workshops, Knowledge Sharing</p>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- Commented out Experience & Education section as this info can be found on LinkedIn
+        <section id="experience" class="container">
+            <h2>Experience & Education</h2>
+            <p class="section-subtitle">My professional journey and academic background</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker current"></div>
+                    <div class="timeline-content">
+                        <h3>Chief Operating Officer</h3>
+                        <p class="timeline-meta">Moonbird AI | Aug 2024 - Present</p>
+                        <ul class="experience-details">
+                            <li>Second team member and tactical jack-of-all-trades keeping the engine running and vision moving forward</li>
+                            <li>Translate client needs into user-centered solutions while coordinating with development teams</li>
+                            <li>Lead all marketing initiatives including content creation, campaigns, SEO, and brand design</li>
+                            <li>Build MCP servers for third-party integrations (Amplitude, Mixpanel, Puppeteer+, eBird)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Sr. Analytics Architect & AI Task Force Representative</h3>
+                        <p class="timeline-meta">WillowTree | Jan 2023 - Aug 2024</p>
+                        <ul class="experience-details">
+                            <li>Developed strategic product/project/feature evaluation plans</li>
+                            <li>Automated SQL query building with Python and LLMs</li>
+                            <li>Led strategic projects around underutilized sources of data</li>
+                            <li>Founding member of AI Task Force, focusing on practical applications of AI in marketing services</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Analytics Architect → Lead Analytics Architect</h3>
+                        <p class="timeline-meta">The Home Depot | Aug 2018 - Nov 2022</p>
+                        <ul class="experience-details">
+                            <li>Architected and maintained analytics infrastructure for multiple site sections</li>
+                            <li>Led the ingestion of offline data during migration to Adobe Experience Platform</li>
+                            <li>Executed SQL queries for ad-hoc reports using Adobe Data Feed and Google BigQuery</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item education">
+                    <div class="timeline-marker education"></div>
+                    <div class="timeline-content">
+                        <h3>Certificate, Applied Data Science</h3>
+                        <p class="timeline-meta">Massachusetts Institute of Technology | 2022</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Analyst → Sr. Analyst</h3>
+                        <p class="timeline-meta">Search Discovery | Aug 2016 - Aug 2018</p>
+                        <p>Delivered analytics solutions from custom JavaScript tagging to executive dashboards.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item education">
+                    <div class="timeline-marker education"></div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Arts, Applied Mathematics</h3>
+                        <p class="timeline-meta">Harvard University | 2012 - 2016</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <section id="generalist" class="container">
+            <h2>The Expert Generalist Mindset</h2>
+            <p class="section-subtitle">From my article <a href="https://ciaraatmoonbird.medium.com/f288bd2d25a4?source=friends_link&sk=41ddb0f55d8a0a3969ef0d2f2f4af558" target="_blank">"The Age of AI and The Age of the Expert Generalist"</a> on Medium</p>
+            <blockquote class="featured-quote">
+                "I've always had lots of interests and been generally decent at many things. I loved spanning disciplines to solve interesting problems. But without time to go deep, I felt like a jack of all trades, master of none. That's changed with AI."
+            </blockquote>
+            <blockquote class="featured-quote">
+                "With AI, a generalist becomes nearly indistinguishable from a polymath. Think Tony Stark putting on his Jarvis-powered exoskeleton — that's how I see the Expert Generalist empowered by AI."
+            </blockquote>
+            
+            <div id="expert-generalist-chart" class="chart-container">
+                <canvas id="radar-chart"></canvas>
+            </div>
+            
+            <p class="chart-caption">This radar chart illustrates how AI amplifies my capabilities across multiple domains, especially in previously challenging areas like AI Systems Integration and UX/UI Design — embodying the "Tony Stark with Jarvis" metaphor.</p>
+        </section>
+
+        <section id="ai-native" class="container">
+            <h2>AI-Native Approach</h2>
+            <p class="section-subtitle">How I intentionally integrate AI into my professional practice</p>
+            <div class="ai-native-content">
+                <p>I'm proudly transparent about being an <strong>AI-Native Professional</strong> — someone who intentionally integrates AI into their workflow, thinking, and creative process.</p>
+                
+                <p>Rather than hiding AI assistance, I believe in:</p>
+                <ul class="ai-principles">
+                    <li><span class="principle-highlight">Thoughtful Integration</span> — Using AI as a thinking partner, not a replacement for human judgment</li>
+                    <li><span class="principle-highlight">Radical Transparency</span> — Being open about where and how AI tools augment my work</li>
+                    <li><span class="principle-highlight">Ethical Boundaries</span> — Maintaining clear guidelines about when AI should and shouldn't be used</li>
+                </ul>
+                
+                <div class="ai-practice">
+                    <p>In practice, this means:</p>
+                    <ul>
+                        <li>Crediting AI contributions in my creative and technical work</li>
+                        <li>Developing sophisticated AI workflows that combine human expertise with AI capabilities</li>
+                        <li>Teaching others to work effectively with AI rather than fearing or overhyping it</li>
+                        <li>Recognizing AI's limitations while harnessing its strengths</li>
+                    </ul>
+                </div>
+                
+                <p class="ai-philosophy">The future belongs to those who can dance with AI systems — knowing when to lead, when to follow, and how to create something neither could accomplish alone.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">A selection of my technical and creative work</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Funkai</h3>
+                        <span class="status-indicator complete">Done</span>
+                    </div>
+                    <div class="project-meta">
+                        <a href="https://github.com/ciaraadkins/funkai" target="_blank">github.com/ciaraadkins/funkai</a>
+                        <a href="https://medium.com/@ciaraatmoonbird/introducing-funkai-a-python-library-for-easy-llm-integration-ddff582947ce" target="_blank">Read Article</a>
+                    </div>
+                    <div class="project-content">
+                        <p>A Python library to easily create and deploy placeholder functions powered by LLMs for rapid prototyping, diverse linguistic tasks, and quick insights. May need updates due to changes in the way LLMs are referenced.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Moozi Lyrics</h3>
+                        <span class="status-indicator maintenance">Maintenance</span>
+                    </div>
+                    <div class="project-meta">
+                        <a href="https://moozilyrics.com/" target="_blank">moozilyrics.com</a>
+                    </div>
+                    <div class="project-content">
+                        <p>An LLM-driven platform used to translate and summarize songs into different languages. Spearheaded and managed end-to-end development from proof of concept to assembling and leading a team of developers and a designer. Being reworked due to licensing issues with MusixMatch.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Trustfall: Humans vs. AI</h3>
+                        <span class="status-indicator in-progress">In Progress</span>
+                    </div>
+                    <div class="project-meta">
+                        <a href="https://github.com/ciaraadkins/trustfall-app" target="_blank">github.com/ciaraadkins/trustfall-app</a>
+                    </div>
+                    <div class="project-content">
+                        <p>A strategic game of trust, deception, and cooperation in the age of AI. This psychological game theory project lets users challenge different AI models in a classic prisoner's dilemma scenario, exploring the dynamics of trust between humans and AI systems.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>StudyCard - Image to Flashcard App</h3>
+                        <span class="status-indicator in-progress">In Progress</span>
+                    </div>
+                    <div class="project-meta">
+                        <a href="https://github.com/ciaraadkins/flashcard-app" target="_blank">github.com/ciaraadkins/flashcard-app</a>
+                    </div>
+                    <div class="project-content">
+                        <p>A mobile-first web application that transforms images into smart, study-ready flashcards using AI. Personal project to help with language learning and studying. Features include image upload, AI-powered flashcard creation, flashcard set organization, and mobile-responsive design.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>MCP Server Portfolio</h3>
+                        <span class="status-indicator complete">Done</span>
+                    </div>
+                    <div class="project-meta">
+                        Professional Projects
+                    </div>
+                    <div class="project-content">
+                        <p>Designed and built multiple Model Context Protocol (MCP) servers that integrate third-party data and AI workflows for moonbird AI.</p>
+                        
+                        <ul class="project-list">
+                            <li>
+                                <strong><a href="https://www.moonbird.ai/mcp-servers/product-analytics" target="_blank" class="title-link">Amplitude MCP Server</a></strong>
+                                <p>Enables AI agents to track events, user behavior, and revenue.</p>
+                            </li>
+                            <li>
+                                <strong><a href="https://www.moonbird.ai/mcp-servers/product-analytics" target="_blank" class="title-link">Mixpanel MCP Server</a></strong>
+                                <p>Allows AIs to send events and properties for product analytics.</p>
+                            </li>
+                            <li>
+                                <strong><a href="https://www.moonbird.ai/mcp-servers/puppeteer-plus-martech" target="_blank" class="title-link">Puppeteer+ Martech MCP</a></strong>
+                                <p>Provides browser automation for marketing and QA tasks.</p>
+                            </li>
+                            <li>
+                                <strong><a href="https://github.com/moonbirdai/ebird-mcp-server" target="_blank" class="title-link">eBird MCP Server</a></strong>
+                                <p>Connects AI agents to Cornell Bird Labs' <a href="https://ebird.org/home" target="_blank" class="inline-link">eBird API</a> for birdwatching data.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>moonbird AI Visual Brand Redesign</h3>
+                        <span class="status-indicator complete">Done</span>
+                    </div>
+                    <div class="project-meta">
+                        Professional Project - Early 2025
+                    </div>
+                    <div class="project-content">
+                        <p>Led a comprehensive visual brand redesign for moonbird AI that established our distinctive identity in the AI space. Created our signature gradient, determined our color scheme, and designed our logo that perfectly captures our brand essence.</p>
+                        <p>Most proud of creating the geometric and visually representative logo which has been enthusiastically embraced by the entire team. Primarily utilized Canva to develop these brand assets that now define our visual presence.</p>
+                        
+                        <div class="logo-container">
+                            <!-- Replace 'moonbird-logo.png' with your actual logo filename once uploaded -->
+                            <img src="images/projects/moonbird-logo.png" alt="moonbird AI Logo" class="project-logo">
+                            <p class="logo-caption">Logo designed by Ciara Adkins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commented out Personal Tenets section
+        <section id="tenets" class="container">
+            <h2>Personal Tenets</h2>
+            <ol class="tenets-list">
+                <li>No decisions made out of fear.</li>
+                <li>Trust your gut — your feelings are valid even if no one else understands.</li>
+                <li>If it's not a hell yes, it's a no.</li>
+                <li>When a flower doesn't bloom, you fix the environment, not the flower.</li>
+                <li>Savor positive experiences.</li>
+                <li>Just because you can doesn't mean you should.</li>
+                <li>A bad day doesn't mean a bad life.</li>
+                <li>Align actions with your authentic self, not external expectations.</li>
+                <li>True empathy means feeling for those you disagree with.</li>
+                <li>Sanity has a price — and it's always worth it.</li>
+            </ol>
+        </section>
+        -->
+
+        <section id="fun-facts" class="container">
+            <h2>Fun Facts & Side Quests</h2>
+            <ul class="fun-facts-list">
+                <li>In my early/mid twenties, I had a go at a singer/songwriter career as Ci Majr and have a song on Spotify with over 2M streams. I still have around 5K monthly listeners! Check out my music: <a href="https://open.spotify.com/artist/7gZ1zsv7v7jNr0QjulWsD4?si=dg86qqO_R8SXdy4nlnE0-w" target="_blank">Spotify</a></li>
+                <li>Aspiring polyglot with B2 level Spanish and B1 level French. I take weekly lessons with tutors on Preply and supplement my learning with my favorite French and Spanish music and TV shows.</li>
+                <li>I'm an amateur collector of art by new and upcoming artists. Currently have 3 originals that I'm really proud to have found.</li>
+                <li>I went to Montessori school and think it was instrumental in moulding me into who I am today.</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="container">
+            <h2>Technical Skills</h2>
+            <p class="section-subtitle">Tools, platforms, and languages I work with</p>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Analytics Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Adobe Analytics</span>
+                        <span class="skill-tag">Adobe Experience Platform</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Amplitude</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Google Looker Studio</span>
+                        <span class="skill-tag">Adobe Analysis Workspace</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Connect With Me</h2>
+            <p>Whether it's a consulting project, a guest blog, or a brainstorm about the future of Expert Generalists, I'm open to connecting.</p>
+            <div class="cta-buttons">
+                <a href="https://calendly.com/ciara-moonbird/30min" class="button primary" target="_blank">Book a Call</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ciara-adkins/" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/ciaraadkins" target="_blank" class="social-link">GitHub</a>
+                <a href="https://medium.com/@ciaraatmoonbird" target="_blank" class="social-link">Medium</a>
+                <a href="https://linktr.ee/ciaraadkins" target="_blank" class="social-link">Linktree</a>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; <span class="current-year">2025</span> Ciara Adkins. All rights reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+    <script>
+        // Fix for personality panels
+        document.addEventListener('DOMContentLoaded', function() {
+            const fixPersonalityPanels = function() {
+                // Manually set up panels
+                const personalityPanels = document.querySelectorAll('.personality-panel');
+                personalityPanels.forEach(panel => {
+                    if (panel.id === 'enneagram-panel') {
+                        panel.style.display = 'block';
+                        panel.classList.add('active');
+                    } else {
+                        panel.style.display = 'none';
+                        panel.classList.remove('active');
+                    }
+                });
+                
+                // Add click event listeners
+                const personalityNavButtons = document.querySelectorAll('.personality-nav-button');
+                personalityNavButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const target = this.getAttribute('data-target');
+                        
+                        // Update active button
+                        personalityNavButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Show target panel
+                        personalityPanels.forEach(panel => {
+                            panel.classList.remove('active');
+                            panel.style.display = 'none';
+                        });
+                        const targetPanel = document.getElementById(`${target}-panel`);
+                        if (targetPanel) {
+                            targetPanel.classList.add('active');
+                            targetPanel.style.display = 'block';
+                        }
+                    });
+                });
+            };
+            
+            // Run the fix
+            setTimeout(fixPersonalityPanels, 500);
+        });
+        
+        // Chart loading script
+        window.addEventListener('load', function() {
+            // Try to render the chart after the page has fully loaded
+            setTimeout(function() {
+                if (window.Chart && document.getElementById('radar-chart')) {
+                    const canvas = document.getElementById('radar-chart');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Chart data
+                    const data = {
+                        labels: [
+                            'Solutions Architecture',
+                            'Marketing & Content',
+                            'Development',
+                            'Analytics & Data',
+                            'Technical Documentation',
+                            'Project Management',
+                            'UX/UI Design',
+                            'AI Systems Integration'
+                        ],
+                        datasets: [
+                            {
+                                label: 'Before AI',
+                                data: [65, 70, 55, 75, 60, 60, 40, 30],
+                                fill: true,
+                                backgroundColor: 'rgba(136, 132, 216, 0.4)',
+                                borderColor: 'rgb(136, 132, 216)',
+                                borderWidth: 1.5,
+                                pointBackgroundColor: 'rgb(136, 132, 216)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgb(136, 132, 216)'
+                            },
+                            {
+                                label: 'With AI',
+                                data: [92, 95, 85, 95, 90, 88, 80, 95],
+                                fill: true,
+                                backgroundColor: 'rgba(0, 119, 182, 0.4)',
+                                borderColor: 'rgb(0, 119, 182)',
+                                borderWidth: 1.5,
+                                pointBackgroundColor: 'rgb(0, 119, 182)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgb(0, 119, 182)'
+                            }
+                        ]
+                    };
+                    
+                    // Chart configuration
+                    const config = {
+                        type: 'radar',
+                        data: data,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            elements: {
+                                line: {
+                                    borderWidth: 1.5
+                                }
+                            },
+                            scales: {
+                                r: {
+                                    grid: {
+                                        color: 'rgba(200, 200, 200, 0.2)',
+                                        lineWidth: 0.5
+                                    },
+                                    angleLines: {
+                                        color: 'rgba(200, 200, 200, 0.3)',
+                                        lineWidth: 0.5
+                                    },
+                                    suggestedMin: 0,
+                                    suggestedMax: 100,
+                                    ticks: {
+                                        backdropColor: 'transparent',
+                                        color: '#666'
+                                    },
+                                    pointLabels: {
+                                        color: '#333',
+                                        font: {
+                                            size: 11
+                                        }
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Skills Transformation With AI',
+                                    font: {
+                                        size: 16,
+                                        weight: 'normal'
+                                    },
+                                    color: '#666',
+                                    padding: {
+                                        top: 10,
+                                        bottom: 10
+                                    }
+                                }
+                            }
+                        }
+                    };
+                    
+                    // Create the chart
+                    new Chart(ctx, config);
+                }
+            }, 300);
+        });
+    </script>
+</body>
+</html>
