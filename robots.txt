@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Allow all bots to access all content
+Sitemap: https://ciara-adkins-site.vercel.app/sitemap.xml
